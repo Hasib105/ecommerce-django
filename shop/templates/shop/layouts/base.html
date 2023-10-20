@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         {% load static %}
 
@@ -8,11 +8,14 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static "css/output.css" %}">
+        <script
+            defer
+            src="{% static 'js/script.js' %}"></script>
         <title>{% block title %}{% endblock %} | UniqeMarketBD</title>
     </head>
-    <body>
+    <body class="bg-background-100 text-text-900">
         <nav
-            class="fixed top-0 left-0 z-20 w-full py-4 border-b bg-primary-300 border-background-200">
+            class="fixed top-0 left-0 z-20 w-full px-20 py-3 border-b bg-primary-300 border-background-200">
             <div
                 class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
                 <div class="flex gap-4">
@@ -38,7 +41,7 @@
                         </svg>
                     </button>
 
-                    {% comment %} Brand Logo  {% endcomment %}
+                    {% comment %} Brand Logo {% endcomment %}
                     <a
                         href="/"
                         class="flex items-center focus:outline-primary-400">
@@ -93,7 +96,7 @@
                             {% comment %} Dropdown menu trigger {% endcomment %}
                             <button
                                 id="dropdownNavbarLink"
-                                class="flex items-center justify-center w-full py-2 pl-3 pr-4 rounded text-text-900 md:border-0 md:hover:text-primary-700 md:p-0 md:w-auto focus:outline-primary-400">
+                                class="flex items-center justify-center w-full py-2 pl-3 pr-4 transition-colors duration-300 transform rounded text-text-800 md:border-0 hover:text-text-500 md:p-0 md:w-auto focus:outline-primary-400">
                                 Menu
                                 <svg
                                     class="w-2.5 h-2.5 ml-2.5"
@@ -141,7 +144,7 @@
                                 <div class="py-1">
                                     <a
                                         href="#"
-                                        class="block px-4 py-2 text-sm text-text-700 hover:bg-primary-50"
+                                        class="block px-4 py-2 text-sm text-text-800 hover:bg-primary-50"
                                         >Sign out</a
                                     >
                                 </div>
@@ -151,7 +154,7 @@
 
                     {% comment %} Cart Icon {% endcomment %}
                     <a
-                        class="relative transition-colors duration-300 transform text-text-700 hover:text-text-600 focus:outline-primary-400"
+                        class="relative transition-colors duration-300 transform text-text-800 hover:text-text-500 focus:outline-primary-400"
                         href="#">
                         <svg
                             class="w-5 h-5"
@@ -172,7 +175,7 @@
 
                     {% comment %} Theme toggle {% endcomment %}
                     <btn
-                        class="relative transition-colors duration-300 transform cursor-pointer text-text-700 hover:text-text-600 focus:outline-primary-400"
+                        class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500 focus:outline-primary-400"
                         onclick="toggleTheme()">
                         <svg
                             class="w-5 h-5"

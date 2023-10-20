@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["../shop/templates/**/*.{html,js}"],
+    safelist: ["dark"],
     theme: {
         extend: {
             colors: {
