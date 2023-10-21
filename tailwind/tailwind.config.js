@@ -1,9 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["../shop/templates/**/*.{html,js}"],
+    content: [
+        "../shop/templates/**/*.{html,js}",
+        "./node_modules/tw-elements/dist/js/**/*.js",
+    ],
     safelist: ["dark"],
     theme: {
         extend: {
+            fontSize: {
+                sm: "0.800rem",
+                base: "1rem",
+                xl: "1.250rem",
+                "2xl": "1.563rem",
+                "3xl": "1.954rem",
+                "4xl": "2.442rem",
+                "5xl": "3.053rem",
+            },
+            fontFamily: {
+                heading: "Sofia Sans",
+                body: "Sofia Sans",
+            },
+            fontWeight: {
+                normal: "400",
+                bold: "700",
+            },
             colors: {
                 text: {
                     50: "var(--text-50)",
@@ -73,5 +93,7 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+
+    plugins: [require("tw-elements/dist/plugin.cjs")],
+    darkMode: "class",
 };

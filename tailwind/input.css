@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Sofia Sans:700|Sofia Sans:400");
 
 @tailwind base;
 @tailwind components;
@@ -128,5 +126,9 @@
         --accent-800: #ccdcbc;
         --accent-900: #e6eedd;
         --accent-950: #f2f6ee;
+    }
+
+    html {
+        font-family: "Sofia Sans", sans-serif;
     }
 }

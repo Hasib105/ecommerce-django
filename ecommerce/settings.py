@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,8 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "shop",
-    # TODO: Following are the dev dependencies. can be removed on production.
-    "django_browser_reload",
+    "django_browser_reload",  # !<- Dev dependency
 ]
 
 MIDDLEWARE = [
@@ -51,8 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # TODO: Following are the dev dependencies. can be removed on production.
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",  # !<- Dev dependency
 ]
 
 ROOT_URLCONF = "ecommerce.urls"
@@ -121,7 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+TE_URL = "tailwind/node_modules/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    BASE_DIR / "tailwind/node_modules",
+]
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
