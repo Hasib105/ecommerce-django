@@ -4,17 +4,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="flex justify-center gap-8 p-3 px-24 shadow-md pt-28 bg-primary-200">
+  <div class="flex justify-around gap-8 p-8 overflow-x-auto">
     {# prettier-ignore-start #}
-    {% for i in "12345678" %}
+    {% for i in "1234567812345678" %}
     {# prettier-ignore-end #}
-      <a href="#" class="group">
-        <div class="w-24 h-24 overflow-hidden rounded-full shadow-md">
-          <img alt="Category" src="https://img.freepik.com/premium-psd/bottle-product-mockup-psd-beauty-packaging_53876-130082.jpg" class="object-cover w-full h-full transition-transform transform scale-100 group-hover:scale-105" />
-        </div>
-
-        <h3 class="mt-1 font-bold text-center text-text-900 hover:text-text-600">Category</h3>
-      </a>
+      {% include 'shop/partials/category-card.html' %}
     {% endfor %}
   </div>
 {% endblock %}
