@@ -115,5 +115,5 @@ To contribute to the project, follow these steps:
 
 ## Misc
 
-- To autoreload development server on html change, [django-browser-reload](https://github.com/adamchainz/django-browser-reload) can be used.
-- `junstyle.vscode-django-support` vscode extension can format, highlight & autocomplete django templates.
+- To auto reload development server on html change, [django-browser-reload](https://github.com/adamchainz/django-browser-reload) package works effectively.
+- To format, highlight & autocomplete django templates in vscode, [junstyle.vscode-django-support](https://marketplace.visualstudio.com/items?itemName=junstyle.vscode-django-support) is a decent extension.
