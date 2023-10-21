@@ -119,11 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = "/static/"
 
-TE_URL = "tailwind/node_modules/"
+TE_URL = "node_modules/"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    BASE_DIR / "tailwind/node_modules",
+    BASE_DIR / "node_modules",
 ]
 
 MEDIA_URL = "media/"

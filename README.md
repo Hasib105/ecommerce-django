@@ -12,19 +12,21 @@ ecommerce/
 ├── ecommerce/
 ├── shop/
 ├── static/
-├── tailwind/
 ├── db.sqlite3
 ├── manage.py
-└── Pipfile
+├── package.json
+├── Pipfile
+└── tailwind.config.js
 ```
 
 - `ecommerce/`: Contains the project settings and URL configurations.
 - `shop/`: Contains the product catalog functionality.
 - `static/`: Contains the static files (CSS, JS, images, etc.).
-- `tailwind/`: Contains the configurations for TailwindCSS and custom themes.
 - `db.sqlite3`: The SQLite database file.
 - `manage.py`: The Django management script.
-- `Pipfile`: The Python dependencies.
+- `package.json`: NPM dependencies.
+- `Pipfile`: Python dependencies.
+- `tailwind.config.js`: Tailwind CSS configurations.
 
 ## Run Local Developement Server
 
@@ -60,7 +62,13 @@ To run the development server, follow these steps:
    pipenv shell
    ```
 
-6. Navigate to the `tailwind/` directory and run the following command to watch for Tailwind CSS changes:
+6. Install the NPM dependencies:
+
+   ```
+   npm install
+   ```
+
+6. Run the following command to watch for Tailwind CSS changes:
 
    ```
    npm run tailwind-watch

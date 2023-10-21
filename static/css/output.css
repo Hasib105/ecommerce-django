@@ -1100,6 +1100,16 @@ html {
   margin-bottom: 5px;
 }
 
+.mx-96{
+  margin-left: 24rem;
+  margin-right: 24rem;
+}
+
+.mx-24{
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
 .-ml-\[1\.5rem\]{
   margin-left: -1.5rem;
 }
@@ -2049,6 +2059,10 @@ html {
   overflow: visible;
 }
 
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
 .overflow-y-auto{
   overflow-y: auto;
 }
@@ -2059,6 +2073,10 @@ html {
 
 .overflow-y-hidden{
   overflow-y: hidden;
+}
+
+.overflow-x-scroll{
+  overflow-x: scroll;
 }
 
 .truncate{
@@ -2523,6 +2541,10 @@ html {
   padding: auto;
 }
 
+.p-8{
+  padding: 2rem;
+}
+
 .\!py-0{
   padding-top: 0px !important;
   padding-bottom: 0px !important;
@@ -2681,6 +2703,11 @@ html {
 .py-\[5px\]{
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.px-96{
+  padding-left: 24rem;
+  padding-right: 24rem;
 }
 
 .pb-0{

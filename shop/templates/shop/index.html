@@ -4,9 +4,9 @@
 {% endblock %}
 
 {% block content %}
-  <div class="flex justify-around gap-8 px-24 py-8">
+  <div class="flex justify-around gap-8 p-8 overflow-x-auto">
     {# prettier-ignore-start #}
-    {% for i in "12345678" %}
+    {% for i in "1234567812345678" %}
     {# prettier-ignore-end #}
       {% include 'shop/partials/category-card.html' %}
     {% endfor %}
