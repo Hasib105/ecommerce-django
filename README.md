@@ -112,3 +112,8 @@ To contribute to the project, follow these steps:
 4. Make your changes and commit them.
 5. Push your changes to your forked repository.
 6. Create a pull request to merge your changes into the main repository.
+
+## Misc
+
+- To autoreload development server on html change, [django-browser-reload](https://github.com/adamchainz/django-browser-reload) can be used.
+- `junstyle.vscode-django-support` vscode extension can format, highlight & autocomplete django templates.
