@@ -714,12 +714,12 @@ video {
   margin-right: 0.25rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
-}
-
 .mt-1{
   margin-top: 0.25rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .block{
@@ -750,6 +750,10 @@ video {
   height: 0.625rem;
 }
 
+.h-24{
+  height: 6rem;
+}
+
 .h-4{
   height: 1rem;
 }
@@ -760,10 +764,6 @@ video {
 
 .h-6{
   height: 1.5rem;
-}
-
-.h-24{
-  height: 6rem;
 }
 
 .h-full{
@@ -780,6 +780,10 @@ video {
 
 .w-2\.5{
   width: 0.625rem;
+}
+
+.w-24{
+  width: 6rem;
 }
 
 .w-36{
@@ -804,10 +808,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.w-24{
-  width: 6rem;
 }
 
 .max-w-screen-xl{
@@ -922,12 +922,12 @@ video {
   background-color: var(--primary-100);
 }
 
-.bg-primary-300{
-  background-color: var(--primary-300);
-}
-
 .bg-primary-200{
   background-color: var(--primary-200);
+}
+
+.bg-primary-300{
+  background-color: var(--primary-300);
 }
 
 .object-cover{
@@ -943,17 +943,22 @@ video {
   padding: 0.5rem;
 }
 
-.p-4{
-  padding: 1rem;
-}
-
 .p-3{
   padding: 0.75rem;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .px-20{
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.px-24{
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .px-4{
@@ -974,11 +979,6 @@ video {
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.px-24{
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 
 .pl-10{
@@ -1011,6 +1011,10 @@ video {
   line-height: 1.25rem;
 }
 
+.font-bold{
+  font-weight: 700;
+}
+
 .font-medium{
   font-weight: 500;
 }
@@ -1023,16 +1027,8 @@ video {
   font-weight: 600;
 }
 
-.font-bold{
-  font-weight: 700;
-}
-
 .text-text-500{
   color: var(--text-500);
-}
-
-.text-text-700{
-  color: var(--text-700);
 }
 
 .text-text-800{
