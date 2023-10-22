@@ -4,6 +4,7 @@ from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('cart/', include('cart.urls')),
     path("", include("shop.urls")),
     path("__reload__/", include("django_browser_reload.urls")),  # !<- Dev dependency
 ]
