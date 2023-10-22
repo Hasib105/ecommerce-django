@@ -18,7 +18,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
     
-class Prouct(models.Model):
+class Product(models.Model):
     category = models.ForeignKey(Category,related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
@@ -29,6 +29,7 @@ class Prouct(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    featured = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['name']
