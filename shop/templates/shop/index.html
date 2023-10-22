@@ -1,8 +1,11 @@
 {% extends 'shop/layouts/base.html' %}
-<!---->
-{% block title %} Home {% endblock %}
-<!---->
+
+{% block title %}
+  Home
+{% endblock %} 
+
 {% block content %}
+<<<<<<< HEAD
 <div class="flex justify-around gap-8 p-8 overflow-x-auto">
   {# prettier-ignore-start #} {% for category in categories %} {#
   prettier-ignore-end #}{% include 'shop/partials/category-card.html' %}
@@ -11,3 +14,14 @@
 </div>
 <!---->
 {% endblock %}
+=======
+  <div class="flex justify-center gap-8 p-8">
+    {# prettier-ignore-start #} 
+    {% for i in "123456789" %} 
+    {# prettier-ignore-end #} 
+    {% include 'shop/partials/category-card.html' %} 
+    {% endfor %}
+  </div>
+
+{% include 'shop/partials/carousel.html' %}
+>>>>>>> 0b2c2135309ff2bd06f659d32edc2a1758b29bf3
