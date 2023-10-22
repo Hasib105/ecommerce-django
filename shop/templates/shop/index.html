@@ -5,12 +5,7 @@
 {% endblock %} 
 
 {% block content %}
-  <div class="flex justify-center gap-8 p-8">
-    {# prettier-ignore-start #} 
-    {% for i in "123456789" %} 
-    {# prettier-ignore-end #} 
-    {% include 'shop/partials/category-card.html' %} 
-    {% endfor %}
-  </div>
 
-{% include 'shop/partials/carousel.html' %}
+{% include "shop/partials/categories-carousel.html" %}
+
+{% endblock content %}
