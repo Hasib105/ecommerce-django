@@ -1,14 +1,13 @@
 {% extends 'shop/layouts/base.html' %}
-{% block title %}
-  Home
-{% endblock %}
-
+<!---->
+{% block title %} Home {% endblock %}
+<!---->
 {% block content %}
-  <div class="flex justify-around gap-8 p-8 overflow-x-auto">
-    {# prettier-ignore-start #}
-    {% for i in "1234567812345678" %}
-    {# prettier-ignore-end #}
-      {% include 'shop/partials/category-card.html' %}
-    {% endfor %}
-  </div>
+<div class="flex justify-around gap-8 p-8 overflow-x-auto">
+  {# prettier-ignore-start #} {% for category in categories %} {#
+  prettier-ignore-end #} {% include 'shop/partials/category-card.html' %}
+  <!---->
+  {% endfor %}
+</div>
+<!---->
 {% endblock %}
