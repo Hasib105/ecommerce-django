@@ -1,5 +1,5 @@
 <div
-    id="carouselExampleControls"
+    id="banner-carousel"
     class="relative"
     data-te-carousel-init
     data-te-ride="carousel">
@@ -8,7 +8,7 @@
         class="relative w-full overflow-hidden p-6 after:clear-both after:block after:content-['']">
         <!-- First item -->
         <div
-            class="relative float-left -mr-[100%] w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg h-80 overflow-hidden"
+            class="relative float-left -mr-[100%] w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg overflow-hidden max-h-64"
             data-te-carousel-item
             data-te-carousel-active>
             <img
@@ -18,7 +18,7 @@
         </div>
         <!-- Second item -->
         <div
-            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg h-80 overflow-hidden"
+            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg overflow-hidden max-h-64"
             data-te-carousel-item>
             <img
                 src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
@@ -29,18 +29,19 @@
 
     <!-- Carousel controls - prev item -->
     <button
-        class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-text-100 opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:no-underline hover:opacity-90 hover:outline-none focus:text-text-100 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
-        data-te-target="#carouselExampleControls"
+        data-te-target="#banner-carousel"
         data-te-slide="prev">
-        <span class="inline-block w-8 h-8">
+        <span
+            class="px-1 py-1 rounded-full bg-background-200 text-text-900 group">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6">
+                class="w-5 h-5 transition-all duration-200 ease-linear group-active:-translate-x-2">
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -54,18 +55,19 @@
     </button>
     <!-- Carousel controls - next item -->
     <button
-        class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-text-100 opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:no-underline hover:opacity-90 hover:outline-none focus:text-text-100 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
-        data-te-target="#carouselExampleControls"
+        data-te-target="#banner-carousel"
         data-te-slide="next">
-        <span class="inline-block w-8 h-8">
+        <span
+            class="px-1 py-1 rounded-full bg-background-200 text-text-900 group">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="w-6 h-6">
+                class="w-5 h-5 transition-all duration-200 ease-linear group-active:translate-x-2">
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"

@@ -5,7 +5,10 @@
 {% endblock %} 
 
 {% block content %}
-
-{% include "shop/partials/categories-carousel.html" %}
-
-{% endblock content %}
+  <div class="flex justify-center">
+    <div class="max-w-screen-xl">
+        {% include "shop/partials/categories-carousel.html" %}
+        {% include "shop/partials/banner-carousel.html" %}
+    </div>
+  </div>
+{% endblock %}
