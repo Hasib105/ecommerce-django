@@ -1,27 +1,23 @@
 <div class="px-4 py-12 mx-auto transition-all duration-500 ease-linear md:px-8">
     <h3 class="mb-6 text-xl font-bold leading-tight lg:text-3xl">
-        Product Categories
+        Popular Brands
     </h3>
     <div class="relative">
         <div
-            class="categories-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
+            class="brands-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
             {% for i in '12345' %} 
                 {% for category in categories %}
                 <div class="flex flex-shrink-0 snap-center">
                     <a
                         href="/categories/{{category.slug}}"
-                        class="group category">
+                        class="group brand">
                         <div
-                            class="w-20 h-20 overflow-hidden rounded-full shadow-md">
+                            class="h-40 overflow-hidden rounded-md w-60">
                             <img
                                 alt="{{category.name}}"
                                 src="{{category.category_image}}"
-                                class="object-cover w-full h-full transition duration-500 ease-in-out hover:scale-110" />
+                                class="object-cover w-full h-full transition duration-500 ease-in- hover:scale-110" />
                         </div>
-                        <h3
-                            class="w-20 mt-1 font-bold text-center text-text-900 hover:text-text-600 text-sm truncate ...">
-                            {{category.name}}
-                        </h3>
                     </a>
                 </div>
                 {% endfor %} 
@@ -31,8 +27,8 @@
         <div class="absolute top-0 items-center hidden h-full -left-10 md:flex">
             <button
                 role="button"
-                class="px-1 py-1 rounded-full prev-category bg-background-200 text-text-900 group opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:opacity-90 focus:opacity-90"
-                aria-label="prev-category">
+                class="px-1 py-1 rounded-full prev-brand bg-background-200 text-text-900 group opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:opacity-90 focus:opacity-90"
+                aria-label="prev-brand">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -51,8 +47,8 @@
             class="absolute top-0 items-center hidden h-full -right-10 md:flex">
             <button
                 role="button"
-                class="px-1 py-1 rounded-full next-category bg-background-200 text-text-900 group opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:opacity-90 focus:opacity-90"
-                aria-label="next-category">
+                class="px-1 py-1 rounded-full next-brand bg-background-200 text-text-900 group opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:opacity-90 focus:opacity-90"
+                aria-label="next-brand">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -71,26 +67,26 @@
 </div>
 
 <style>
-    .categories-container {
+    .brands-container {
         -ms-overflow-style: none; /* Internet Explorer 10+ */
         scrollbar-width: none; /* Firefox */
     }
-    .categories-container::-webkit-scrollbar {
+    .brands-container::-webkit-scrollbar {
         display: none; /* Safari and Chrome */
     }
 </style>
 
 <script>
-    const categoriesContainer = document.querySelector(".categories-container");
-    const categoryWidth = categoriesContainer.querySelector(".category").clientWidth;
-    const prevCategory = document.querySelector(".prev-category");
-    const nextCategory = document.querySelector(".next-category");
+    const brandsContainer = document.querySelector(".brands-container");
+    const brandWidth = brandsContainer.querySelector(".brand").clientWidth;
+    const prevBrand = document.querySelector(".prev-brand");
+    const nextBrand = document.querySelector(".next-brand");
 
-    prevCategory.addEventListener("click", () => {
-        categoriesContainer.scrollLeft += categoryWidth * 3;
+    nextBrand.addEventListener("click", () => {
+        brandsContainer.scrollLeft += brandWidth * 3;
     });
 
-    prevCategory.addEventListener("click", () => {
-        categoriesContainer.scrollLeft -= categoryWidth * 3;
+    prevBrand.addEventListener("click", () => {
+        brandsContainer.scrollLeft -= brandWidth * 3;
     });
 </script>
