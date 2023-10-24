@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        "shop/templates/**/*.{html,js}",
+        "./cart/templates/**/*.{html,js}",
+        "./shop/templates/**/*.{html,js}",
         "./node_modules/tw-elements/dist/js/**/*.js",
     ],
     safelist: ["dark"],

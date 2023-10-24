@@ -36,6 +36,6 @@ def cart_details(request):
             'quantity': item['quantity'],
             'override':True
         })
-    return render(request, 'cart/cart_detail.html', {
+    return render(request, 'cart/cart_details.html', {
         'cart': cart
     })
