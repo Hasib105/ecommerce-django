@@ -5,8 +5,7 @@
     <div class="relative">
         <div
             class="categories-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
-            {% for i in '12345' %} 
-                {% for category in categories %}
+            {% for category in categories %}
                 <div class="flex flex-shrink-0 snap-center">
                     <a
                         href="/categories/{{category.slug}}"
@@ -24,7 +23,6 @@
                         </h3>
                     </a>
                 </div>
-                {% endfor %} 
             {% endfor %}
         </div>
 

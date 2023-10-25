@@ -26,8 +26,8 @@
                         </a>
                         <img
                             class="object-contain w-full lg:h-full"
-                            src="https://retailminded.com/wp-content/uploads/2016/03/EN_GreenOlive-1.jpg"
-                            alt="" />
+                            src="{{product.product_image}}"
+                            alt="{{product.name}}" />
                         <a
                             class="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2"
                             href="#">
@@ -52,8 +52,8 @@
                                 href="#">
                                 <img
                                     class="object-cover w-full rounded-md shadow-md aspect-square"
-                                    src="https://retailminded.com/wp-content/uploads/2016/03/EN_GreenOlive-1.jpg"
-                                    alt="" />
+                                    src="{{product.product_image}}"
+                                    alt="{{product.name}}" />
                             </a>
                         </div>
                       {% endfor %}
@@ -69,7 +69,7 @@
                         >
                         <h2
                             class="max-w-xl my-3 text-xl leading-none capitalize text-text-700 md:text-2xl">
-                            iPhone 15 pro ultra max
+                            {{product.name}}
                         </h2>
                         <div class="flex flex-wrap items-center mb-6">
                             <ul class="flex mb-4 mr-2 lg:mb-0">
@@ -93,7 +93,7 @@
                         </div>
                         <p
                             class="inline-block text-2xl text-text-700 ">
-                            <span>৳10000</span>
+                            <span>৳ {{product.price}}</span>
                             <span
                                 class="ml-3 text-base font-normal line-through text-text-500 "
                                 >৳20000</span
@@ -101,10 +101,16 @@
                         </p>
                     </div>
                     <div
-                        class="py-6 mb-6 border-t border-b border-background-200 ">
-                        <span class="text-base text-text-600 "
-                            >In Stock</span
-                        >
+                        class="py-6 mb-6 border-t border-b border-background-200">
+                        {% if product.available %}
+                            <span class="text-base text-green-600">
+                                In Stock
+                            </span>
+                        {% else %}
+                            <span class="text-base text-red-500">
+                                Out of Stock
+                            </span>
+                        {% endif %}
                     </div>
                     <div class="mb-6"></div>
                     <div class="flex flex-wrap items-center justify-between mb-6">
@@ -147,6 +153,16 @@
                 </div>
             </div>
         </div>
+
+        {% if related_products|length > 0 %}
+          {% include "shop/partials/section-banner.html" with text="Recommended for you" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+          
+          <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
+            {% for product in related_products %}
+              {% include "shop/partials/product-card.html" %}
+            {% endfor %}
+          </div>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
