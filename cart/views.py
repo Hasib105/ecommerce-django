@@ -17,7 +17,7 @@ def cart_add(request, product_id):
     if form.is_valid():
         cd = form.cleaned_data
         cart.add(product=product)
-        return JsonResponse({"message": "Item added to the cart"})
+        return JsonResponse({"message": "Item added to the cart", "cartItemsCount": len(cart)})
     else:
         return JsonResponse({"message": "Failed to add item to the cart"}, status=400)
 

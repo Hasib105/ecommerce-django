@@ -137,43 +137,97 @@
             class="relative transition-colors duration-300 transform text-text-800 focus:outline-primary-400 group"
             href="{% url 'cart_details' %}">
             <svg
-                class="w-5 h-5 group-hover:text-text-500"
+                class="w-6 h-6 group-hover:text-text-500"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z"
                     stroke="currentColor"
-                    stroke-width="2"
+                    stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
 
             {% if cart|length > 0 %}
-              <span
-                  class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
-                  {{ cart|length }}
-              </span>
+            <span
+                id="cart-items-counter"
+                class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
+                {{ cart|length }}
+            </span>
             {% endif %}
         </a>
 
         <!-- Theme toggle -->
         <btn
+            id="dark-theme-switch"
             class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500 focus:outline-primary-400"
-            onclick="toggleTheme()">
+            onclick="setDarkTheme()">
             <svg
-                class="w-5 h-5"
-                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 18 20">
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
                 <path
-                    stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8.509 5.75c0-1.493.394-2.96 1.144-4.25h-.081a8.5 8.5 0 1 0 7.356 12.746A8.5 8.5 0 0 1 8.509 5.75Z" />
+                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
             </svg>
         </btn>
+        <btn
+            id="light-theme-switch"
+            class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500 focus:outline-primary-400"
+            onclick="setLightTheme()">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            </svg>
+        </btn>
+
+        <!--Theme Switcher-->
+        <script>
+            const lightThemeSwitch = document.querySelector(
+                "#light-theme-switch"
+            );
+            const darkThemeSwitch =
+                document.querySelector("#dark-theme-switch");
+            if (
+                localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+                darkThemeSwitch.hidden = true;
+                lightThemeSwitch.hidden = false;
+            } else {
+                document.documentElement.classList.remove("dark");
+                lightThemeSwitch.hidden = true;
+                darkThemeSwitch.hidden = false;
+            }
+
+            function setDarkTheme() {
+                darkThemeSwitch.hidden = true;
+                lightThemeSwitch.hidden = false;
+                document.documentElement.classList.add("dark");
+                localStorage.theme = "dark";
+            }
+
+            function setLightTheme() {
+                lightThemeSwitch.hidden = true;
+                darkThemeSwitch.hidden = false;
+                document.documentElement.classList.remove("dark");
+                localStorage.theme = "light";
+            }
+        </script>
     </div>
 </nav>

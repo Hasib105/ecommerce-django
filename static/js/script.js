@@ -1,8 +1,3 @@
-function toggleTheme() {
-    const html = document.querySelector("html");
-    html.classList.toggle("dark");
-}
-
 let forms = document.querySelectorAll(".cart-add-form");
 
 forms.forEach((form) => {
@@ -20,6 +15,11 @@ forms.forEach((form) => {
         })
             .then((response) => response.json())
             .then((data) => {
+                const cartItemsCounter = document.querySelector(
+                    "#cart-items-counter"
+                );
+                cartItemsCounter.textContent = data.cartItemsCount;
+                
                 if (data.message) {
                     alert(data.message);
                 }
