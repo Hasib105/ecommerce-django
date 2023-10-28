@@ -21,7 +21,7 @@
                         {{ product.name }}
                     </h2>
                     <p class="mt-1 text-xs text-text-700">
-                        Product additional info
+                        ৳ {{item.price}}
                     </p>
                 </div>
                 <div
@@ -38,7 +38,7 @@
                             disabled
                             class="w-8 h-8 text-xs text-center border outline-none bg-background-50"
                             type="number"
-                            value="1"
+                            value="{{ item.quantity }}"
                             min="1" />
                         <form action="{% url 'cart_add' product.id %}" method="post">
                             {% csrf_token %}
@@ -68,7 +68,7 @@
                         </form>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <p class="text-sm">৳ {{ item.price }}</p>
+                        <p class="text-sm">৳ {{ item.total_price }} </p>
                     </div>
                 </div>
             </div>
@@ -85,13 +85,13 @@
         </div>
         <div class="flex justify-between">
             <p class="text-text-700">Delivery Charge</p>
-            <p class="text-text-700">৳ 100</p>
+            <p class="text-text-700">৳ 0</p>
         </div>
         <hr class="my-4" />
         <div class="flex justify-between">
             <p class="text-lg font-bold">Total</p>
             <div class="">
-                <p class="mb-1 text-lg font-bold">৳ 10,0100</p>
+                <p class="mb-1 text-lg font-bold">৳ {{ cart.get_total_price }}</p>
                 <p class="text-sm text-text-700">including VAT</p>
             </div>
         </div>

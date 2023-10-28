@@ -6,7 +6,7 @@
         <div
             class="categories-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
             {% for category in categories %}
-                <div class="flex flex-shrink-0 snap-center">
+                <div class="flex flex-shrink-0 snap-center group">
                     <a
                         href="/categories/{{category.slug}}"
                         class="group category">
@@ -15,10 +15,10 @@
                             <img
                                 alt="{{category.name}}"
                                 src="{{category.category_image}}"
-                                class="object-cover w-full h-full transition duration-500 ease-in-out hover:scale-110" />
+                                class="object-cover w-full h-full transition duration-500 ease-in-out group-hover:scale-110" />
                         </div>
                         <h3
-                            class="w-20 mt-1 font-bold text-center text-text-900 hover:text-text-600 text-sm truncate ...">
+                            class="w-20 mt-1 font-bold text-center text-text-900 group-hover:text-text-600 text-sm truncate ...">
                             {{category.name}}
                         </h3>
                     </a>

@@ -4564,6 +4564,10 @@ html {
   color: var(--text-500);
 }
 
+.group:hover .group-hover\:text-text-600{
+  color: var(--text-600);
+}
+
 .group\/ps:hover .group-hover\/ps\:opacity-60{
   opacity: 0.6;
 }
