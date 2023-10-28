@@ -1,15 +1,20 @@
+{% load static %}
+
 <h1 class="py-8 text-3xl font-bold text-center capitalize">Your cart items</h1>
 <div class="justify-center max-w-5xl px-6 mx-auto md:flex md:space-x-6 xl:px-0">
     <div class="rounded-md md:w-2/3">
         {% for item in cart %} {% with product=item.product %}
         <a
             href="{{ product.get_absolute_url }}"
-            class="justify-between block p-6 mb-6 rounded-md shadow-md bg-background-50 sm:flex sm:justify-start">
+            class="justify-between block p-6 mb-6 rounded-md shadow-md group bg-background-50 sm:flex sm:justify-start">
             <img
-                src="{% if product.image %}{{ product.image.url }} {% else %}{%
-                      static 'img/no_image.png' %}{% endif %}"
+                src="{% if product.product_image %}
+                        {{ product.product_image }} 
+                    {% else %}
+                        {% static 'images/broken-image.webp' %}
+                    {% endif %}"
                 alt="Image of {{ product.name }}"
-                class="w-full rounded-md sm:w-40" />
+                class="w-full transition duration-500 ease-in-out rounded-md sm:w-20 aspect-square group-hover:scale-110" />
             <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                 <div class="mt-5 sm:mt-0">
                     <h2 class="text-lg font-bold text-text-900">
