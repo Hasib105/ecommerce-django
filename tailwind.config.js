@@ -1,9 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    plugins: [require("flowbite/plugin")],
     content: [
         "./cart/templates/**/*.{html,js}",
         "./shop/templates/**/*.{html,js}",
-        "./node_modules/tw-elements/dist/js/**/*.js",
+        "./node_modules/flowbite/**/*.js",
     ],
     safelist: ["dark"],
     theme: {
@@ -94,7 +95,4 @@ module.exports = {
             },
         },
     },
-
-    plugins: [require("tw-elements/dist/plugin.cjs")],
-    darkMode: "class",
 };

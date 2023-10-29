@@ -5,23 +5,18 @@
     <div class="relative">
         <div
             class="brands-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
-            {% for i in '12345' %} 
-                {% for category in categories %}
-                <div class="flex flex-shrink-0 snap-center">
-                    <a
-                        href="/categories/{{category.slug}}"
-                        class="group brand">
-                        <div
-                            class="h-40 overflow-hidden rounded-md w-60">
-                            <img
-                                alt="{{category.name}}"
-                                src="{{category.category_image}}"
-                                class="object-cover w-full h-full transition duration-500 ease-in- hover:scale-110" />
-                        </div>
-                    </a>
-                </div>
-                {% endfor %} 
-            {% endfor %}
+            {% for category in categories %}
+            <div class="flex flex-shrink-0 snap-center">
+                <a
+                    href="/categories/{{category.slug}}"
+                    class="block h-40 overflow-hidden rounded-md shadow-md group brand w-60">
+                    <img
+                        alt="{{category.name}}"
+                        src="{{category.category_image}}"
+                        class="object-cover w-full h-full transition duration-500 ease-in- hover:scale-110" />
+                </a>
+            </div>
+            {% endfor %} 
         </div>
 
         <div class="absolute top-0 items-center hidden h-full -left-10 md:flex">
