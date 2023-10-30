@@ -1,82 +1,65 @@
 <div
-    id="banner-carousel"
-    class="relative"
-    data-te-carousel-init
-    data-te-ride="carousel">
-    <!-- Carousel items -->
-    <div
-        class="relative w-full overflow-hidden py-6 after:clear-both after:block after:content-['']">
-        <!-- First item -->
-        <div
-            class="relative float-left -mr-[100%] w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg overflow-hidden max-h-64 shadow-md"
-            data-te-carousel-item
-            data-te-carousel-active>
-            <img
-                src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-                class="block object-cover w-full"
-                alt="Camera" />
-        </div>
-        <!-- Second item -->
-        <div
-            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-700 ease-in-out motion-reduce:transition-none rounded-lg overflow-hidden max-h-64 shadow-md"
-            data-te-carousel-item>
-            <img
-                src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-                class="block object-cover w-full"
-                alt="Camera" />
-        </div>
+    id="default-carousel"
+    class="relative w-full"
+    data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-48 overflow-hidden rounded-md">
+        <!-- Items -->
+        {% for banner in '123' %}
+            <div
+                class="hidden duration-700 ease-in-out"
+                data-carousel-item>
+                <img
+                    src="https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/6254244cf496052ee6795ba5_Riding%20the%20Vaporwave.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="..." />
+            </div>
+        {% endfor %}
     </div>
 
-    <!-- Carousel controls - prev item -->
     <button
-        class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-text-100 opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:no-underline hover:opacity-90 hover:outline-none focus:text-text-100 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
-        data-te-target="#banner-carousel"
-        data-te-slide="prev">
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev>
         <span
-            class="px-1 py-1 rounded-full bg-background-200 text-text-900 group">
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-background-100 opacity-30 group-hover:opacity-50 group-focus:ring-2 group-focus:ring-background-800 group-focus:outline-none">
             <svg
+                class="w-4 h-4 text-text-800 "
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 transition-all duration-200 ease-linear group-active:-translate-x-2">
+                viewBox="0 0 6 10">
                 <path
+                    stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    stroke-width="2"
+                    d="M5 1 1 5l4 4" />
             </svg>
+            <span class="sr-only">Previous</span>
         </span>
-        <span
-            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-            >Previous</span
-        >
     </button>
-    <!-- Carousel controls - next item -->
+    
     <button
-        class="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-text-100 opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-text-100 hover:no-underline hover:opacity-90 hover:outline-none focus:text-text-100 focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
         type="button"
-        data-te-target="#banner-carousel"
-        data-te-slide="next">
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next>
         <span
-            class="px-1 py-1 rounded-full bg-background-200 text-text-900 group">
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-background-100 opacity-30 group-hover:opacity-50 group-focus:ring-2 group-focus:ring-background-800 group-focus:outline-none">
             <svg
+                class="w-4 h-4 text-text-800 "
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-5 h-5 transition-all duration-200 ease-linear group-active:translate-x-2">
+                viewBox="0 0 6 10">
                 <path
+                    stroke="currentColor"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    stroke-width="2"
+                    d="m1 9 4-4-4-4" />
             </svg>
+            <span class="sr-only">Next</span>
         </span>
-        <span
-            class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
-            >Next</span
-        >
     </button>
 </div>

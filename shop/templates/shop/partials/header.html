@@ -1,7 +1,7 @@
 {% load static %}
 
 <nav
-    class="sticky top-0 z-20 w-full transition-colors duration-500 border-b border-background-200 backdrop-blur bg-background-100">
+    class="sticky top-0 z-50 w-full transition-colors duration-500 border-b border-background-200 backdrop-blur bg-background-100">
     <div
         class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <!--Left Section-->
@@ -13,13 +13,13 @@
                 src="{% static 'images/logo.webp' %}"
                 class="h-8 mr-3"
                 alt="Site Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-text-800 hover:text-text-500"
+            <span class="self-center hidden text-2xl font-semibold whitespace-nowrap text-text-800 hover:text-text-500 md:block"
                 >UniqueMart</span
             >
         </a>
 
         <!--Right Section-->
-        <div class="flex items-center gap-14 md:order-2">
+        <div class="flex items-center gap-4 md:gap-14 md:order-2">
             <!-- Desktop Dropdown Menu -->
             <div class="hidden group md:block">
                 <!-- Dropdown menu trigger -->
@@ -43,7 +43,7 @@
                 <!-- Dropdown menu items -->
                 <div
                     id="dropdownNavbar"
-                    class="absolute z-20 hidden font-normal divide-y rounded-md shadow bg-background-50 divide-background-100 w-36 group-hover:block">
+                    class="absolute z-50 hidden font-normal divide-y rounded-md shadow bg-background-50 divide-background-100 w-36 group-hover:block">
                     <ul
                         class="py-2 text-sm text-text-900"
                         aria-labelledby="dropdownLargeButton">

@@ -5,37 +5,35 @@
 {% endblock %} 
 
 {% block content %}
-  <div class="flex justify-center">
-    <div class="max-w-screen-xl">
+  <div class="p-2 md:px-24 md:py-8">
       {% if categories|length > 0 %}
         {% include "shop/partials/categories-carousel.html" %}
-      {% endif %}
+      {% endif %} 
 
+      <div class="w-full">
         {% include "shop/partials/banner-carousel.html" %}
-
-        {% comment %} Featured Products {% endcomment %}
-        {% if featured_products|length > 0 %}
-          {% include "shop/partials/section-banner.html" with text="Featured Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
-          
-          <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
-            {% for product in featured_products %}
-              {% include "shop/partials/product-card.html" %}
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        {% comment %} Latest Products {% endcomment %}
-        {% if featured_products|length > 0 %}
-          {% include "shop/partials/section-banner.html" with text="Latest Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
-          
-          <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
-            {% for product in latest_products %}
-              {% include "shop/partials/product-card.html" %}
-            {% endfor %}
-          </div>
-        {% endif %}
+      </div>
+        <!--Featured Products--> 
+      {% if featured_products|length > 0 %}
+        {% include "shop/partials/section-banner.html" with text="Featured Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
         
-        {% include "shop/partials/brands-carousel.html" %}
-    </div>
+        <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
+          {% for product in featured_products %}
+            {% include "shop/partials/product-card.html" %}
+          {% endfor %}
+        </div>
+      {% endif %} 
+
+         <!--Latest Products--> 
+      {% if featured_products|length > 0 %}
+        {% include "shop/partials/section-banner.html" with text="Latest Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+        
+        <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
+          {% for product in latest_products %}
+            {% include "shop/partials/product-card.html" %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% include "shop/partials/brands-carousel.html" %} 
   </div>
 {% endblock %}
