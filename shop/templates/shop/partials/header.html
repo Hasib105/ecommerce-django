@@ -13,43 +13,76 @@
                 src="{% static 'images/logo.webp' %}"
                 class="h-8 mr-3"
                 alt="Site Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap"
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-text-800 hover:text-text-500"
                 >UniqueMart</span
             >
         </a>
 
         <!--Right Section-->
-        <div class="flex items-center gap-8 md:order-2">
-            <!--Cart Button-->
-            <a
-                class="relative transition-colors duration-300 transform text-text-800 focus:outline-primary-400 group"
-                href="{% url 'cart:cart_details' %}">
-                <svg
-                    class="w-6 h-6 group-hover:text-text-500"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-
-                {% if cart|length > 0 %}
-                <span
-                    id="cart-items-counter"
-                    class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
-                    {{ cart|length }}
-                </span>
-                {% endif %}
-            </a>
+        <div class="flex items-center gap-14 md:order-2">
+            <!-- Desktop Dropdown Menu -->
+            <div class="hidden group md:block">
+                <!-- Dropdown menu trigger -->
+                <button
+                    id="dropdownNavbarLink"
+                    class="flex items-center justify-center w-full py-2 transition-colors duration-300 transform rounded text-text-800 md:border-0 hover:text-text-500 focus:outline-primary-400">
+                    Menu<svg
+                        class="w-2.5 h-2.5 ml-2.5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 10 6">
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <!-- Dropdown menu items -->
+                <div
+                    id="dropdownNavbar"
+                    class="absolute z-20 hidden font-normal divide-y rounded-md shadow bg-background-50 divide-background-100 w-36 group-hover:block">
+                    <ul
+                        class="py-2 text-sm text-text-900"
+                        aria-labelledby="dropdownLargeButton">
+                        <li>
+                            <a
+                                href="#"
+                                class="block px-4 py-2 hover:bg-background-100"
+                                >Profile</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="block px-4 py-2 hover:bg-background-100"
+                                >Orders</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="block px-4 py-2 hover:bg-background-100"
+                                >Settings</a
+                            >
+                        </li>
+                    </ul>
+                    <div class="py-1">
+                        <a
+                            href="#"
+                            class="block px-4 py-2 text-sm text-text-800 hover:bg-background-100"
+                            >Sign out</a
+                        >
+                    </div>
+                </div>
+            </div>
 
             <!-- Theme toggle -->
             <btn
                 id="dark-theme-switch"
-                class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500 focus:outline-primary-400"
+                class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500"
                 onclick="setDarkTheme()">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +99,7 @@
             </btn>
             <btn
                 id="light-theme-switch"
-                class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500 focus:outline-primary-400"
+                class="relative transition-colors duration-300 transform cursor-pointer text-text-800 hover:text-text-500"
                 onclick="setLightTheme()">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -119,11 +152,37 @@
                 }
             </script>
 
+            <!--Cart Button-->
+            <a
+                class="relative transition-colors duration-300 transform text-text-800 group"
+                href="{% url 'cart:cart_details' %}">
+                <svg
+                    class="w-6 h-6 group-hover:text-text-500"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.70711 15.2929C4.07714 15.9229 4.52331 17 5.41421 17H17M17 17C15.8954 17 15 17.8954 15 19C15 20.1046 15.8954 21 17 21C18.1046 21 19 20.1046 19 19C19 17.8954 18.1046 17 17 17ZM9 19C9 20.1046 8.10457 21 7 21C5.89543 21 5 20.1046 5 19C5 17.8954 5.89543 17 7 17C8.10457 17 9 17.8954 9 19Z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+                {% if cart|length > 0 %}
+                <span
+                    id="cart-items-counter"
+                    class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
+                    {{ cart|length }}
+                </span>
+                {% endif %}
+            </a>
+
             <!--Mobile Menu Trigger-->
             <button
                 data-collapse-toggle="navbar-sticky"
                 type="button"
-                class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                class="inline-flex items-center justify-center w-10 h-10 text-sm rounded-lg text-text-800 md:hidden hover:text-text-500"
                 aria-controls="navbar-sticky"
                 aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -148,7 +207,7 @@
             class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky">
             <ul
-                class="flex flex-col items-center p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+                class="flex flex-col items-center p-2 mt-4 font-medium border rounded-lg border-background-50 md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
                 <li class="relative w-full md:block md:w-96">
                     <div
                         class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -173,6 +232,37 @@
                         class="block w-full p-2 pl-10 text-sm border rounded-lg text-text-900 border-background-300 bg-background-100 focus:outline-background-400"
                         placeholder="What are you looking for?" />
                 </li>
+
+                <ul class="block w-full pt-2 text-right divide-y divide-background-50 md:hidden">
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-2 font-bold hover:text-text-500"
+                            >Profile</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-2 font-bold hover:text-text-500"
+                            >Orders</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-2 font-bold hover:text-text-500"
+                            >Settings</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="block py-2 font-bold hover:text-text-500"
+                            >Sign out</a
+                        >
+                    </li>
+                </ul>
             </ul>
         </div>
     </div>
