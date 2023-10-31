@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+<!---->
+{% block body %}
+<div class="flex justify-center items-center h-screen">
+  <div class="w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4">Order summary</h1>
+    <table class="border-collapse border border-gray-300">
+      <thead>
+        <tr>
+          <th class="border border-gray-300 px-4 py-2">Product</th>
+          <th class="border border-gray-300 px-4 py-2">Price</th>
+          <th class="border border-gray-300 px-4 py-2">Quantity</th>
+          <th class="border border-gray-300 px-4 py-2">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order.items.all %}
+        <tr class="bg-gray-100">
+          <td class="border border-gray-300 px-4 py-2">
+            {{ item.product.name }}
+          </td>
+          <td class="border border-gray-300 px-4 py-2">${{ item.price }}</td>
+          <td class="border border-gray-300 px-4 py-2">{{ item.quantity }}</td>
+          <td class="border border-gray-300 px-4 py-2">${{ item.get_cost }}</td>
+        </tr>
+        {% endfor %}
+        <tr class="bg-gray-200">
+          <td class="border border-gray-300 px-4 py-2" colspan="4">Total</td>
+          <td class="border border-gray-300 px-4 py-2">
+            ${{ order.total_price }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <form action="{% url 'process' %}" method="POST" class="mt-4">
+      {% csrf_token %}
+      <input
+        type="submit"
+        value="Pay now"
+        class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer"
+      />
+    </form>
+  </div>
+</div>
+{% endblock %}
