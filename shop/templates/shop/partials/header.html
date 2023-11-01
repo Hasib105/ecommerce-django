@@ -169,11 +169,11 @@
                         stroke-linejoin="round" />
                 </svg>
 
-                {% if cart_items > 0 %}
+                {% if cart_items_count > 0 %}
                 <span
                     id="cart-items-counter"
                     class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
-                    {{ cart_items }}
+                    {{ cart_items_count }}
                 </span>
                 {% endif %}
             </a>
