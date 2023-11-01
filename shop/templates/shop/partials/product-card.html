@@ -15,9 +15,8 @@
 
         <form
             class="mt-2 cart-add-form"
-            action="{% url 'cart:cart_add' product.id %}"
-            method="post">
-            {% csrf_token %}
+            action="{% url 'add_to_cart' product.id %}"
+            method="get">
             <button
                 class="block w-full p-2 font-medium transition rounded md:p-4 bg-primary-400 hover:scale-105">
                 Add to Cart

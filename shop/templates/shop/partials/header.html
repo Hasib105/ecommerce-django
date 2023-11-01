@@ -155,7 +155,7 @@
             <!--Cart Button-->
             <a
                 class="relative transition-colors duration-300 transform text-text-800 group"
-                href="{% url 'cart:cart_details' %}">
+                href="{% url 'cart_details' %}">
                 <svg
                     class="w-6 h-6 group-hover:text-text-500"
                     viewBox="0 0 24 24"
@@ -169,11 +169,11 @@
                         stroke-linejoin="round" />
                 </svg>
 
-                {% if cart|length > 0 %}
+                {% if cart_items > 0 %}
                 <span
                     id="cart-items-counter"
                     class="absolute px-2 py-1 text-xs font-bold rounded-full text-text-900 -right-3 bg-primary-200 -top-3 group-hover:bg-primary-100">
-                    {{ cart|length }}
+                    {{ cart_items }}
                 </span>
                 {% endif %}
             </a>

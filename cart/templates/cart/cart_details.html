@@ -3,7 +3,7 @@
 {% block title %} Cart {% endblock %} 
 
 {% block content %}
-    {% if cart|length > 0 %}
+    {% if cart_items|length > 0 %}
         {% include "cart/partials/filled_cart.html" %} 
     {% else %}
         {% include "cart/partials/empty_cart.html" %}

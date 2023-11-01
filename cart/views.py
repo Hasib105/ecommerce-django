@@ -25,7 +25,7 @@ def add_to_cart(request, id):
     return redirect('cart_details')
 
 
-def cart_detail(request):
+def cart_details(request):
     session_id = request.session.session_key
     cart_items = CartItem.objects.filter(session_id=session_id)
     
@@ -34,7 +34,7 @@ def cart_detail(request):
     for item in cart_items:
         total_price += item.quantity * item.product.price
 
-    return render(request, 'cart_detail.html', {
+    return render(request, 'cart/cart_details.html', {
         'cart_items': cart_items,
         'total_price': total_price,
     })
