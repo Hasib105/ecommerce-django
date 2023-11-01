@@ -4,8 +4,8 @@
 
 {% block content %}
 <section class="flex justify-center py-10">
-    <div class="max-w-screen-xl px-4">
-        <div class="flex flex-wrap mb-24 -mx-4">
+    <div class="max-w-screen-xl px-2">
+        <div class="flex flex-wrap -mx-4">
             <div class="w-full px-4 mb-8 md:w-1/2 md:mb-0">
                 <div class="sticky top-0 overflow-hidden">
                     <div class="relative lg:h-64">
@@ -157,7 +157,7 @@
         {% if related_products|length > 0 %}
           {% include "shop/partials/section-banner.html" with text="Recommended for you" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
           
-          <div class="grid grid-cols-2 gap-6 mt-6 md:grid-cols-3 lg:grid-cols-5">
+          <div class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
             {% for product in related_products %}
               {% include "shop/partials/product-card.html" %}
             {% endfor %}
