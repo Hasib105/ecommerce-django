@@ -1,147 +1,113 @@
 {% extends "shop/layouts/base.html" %} 
 
-{% block title %} Cart {% endblock %} 
+{% block title %} {{product.name}} {%endblock %} 
 
 {% block content %}
-<section class="flex justify-center py-10">
-    <div class="max-w-screen-xl px-2">
-        <div class="flex flex-wrap -mx-4">
-            <div class="w-full px-4 mb-8 md:w-1/2 md:mb-0">
-                <div class="sticky top-0 overflow-hidden">
-                    <div class="relative lg:h-64">
+<section class="flex justify-center py-5">
+    <div class="max-w-screen-xl">
+        <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 ">
+                <div class="m-2 overflow-hidden">
+                    <img
+                        class="object-cover w-full h-64 rounded-md md:h-96"
+                        src="{{product.product_image}}"
+                        alt="{{product.name}}" />
+                </div>
+                <div class="items-center justify-center hidden mx-2 border-y md:flex border-background-200">
+                    {% for i in 'iiii' %}
+                    <div class="w-1/2 p-2 sm:w-1/5">
                         <a
-                            class="absolute left-0 transform lg:ml-2 top-1/2 translate-1/2"
+                            class="block"
                             href="#">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="w-5 h-5 text-primary-500"
-                                viewBox="0 0 16 16">
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
-                            </svg>
-                        </a>
-                        <img
-                            class="object-contain w-full lg:h-full"
-                            src="{{product.product_image}}"
-                            alt="{{product.name}}" />
-                        <a
-                            class="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2"
-                            href="#">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="currentColor"
-                                class="w-5 h-5 text-primary-500 "
-                                viewBox="0 0 16 16">
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"></path>
-                            </svg>
+                            <img
+                                class="object-cover w-full border rounded-md border-background-200 hover:border-2 hover:border-primary-300 aspect-square"
+                                src="{{product.product_image}}"
+                                alt="{{product.name}}" />
                         </a>
                     </div>
-                    <div class="items-center justify-center hidden p-4 -mx-2 md:flex">
-                      {% for i in 'iiii' %}
-                        <div class="w-1/2 p-2 sm:w-1/5">
-                            <a
-                                class="block"
-                                href="#">
-                                <img
-                                    class="object-cover w-full rounded-md shadow-md aspect-square"
-                                    src="{{product.product_image}}"
-                                    alt="{{product.name}}" />
-                            </a>
-                        </div>
-                      {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="w-full px-4 md:w-1/2">
-                <div class="lg:pl-20">
-                    <div class="mb-6">
-                        <span
-                            class="px-2.5 py-1 text-xs text-primary-700 bg-primary-100 border border-primary-200 rounded-xl"
-                            >50% Off</span
-                        >
-                        <h2
-                            class="max-w-xl my-3 text-xl leading-none capitalize text-text-700 md:text-2xl">
-                            {{product.name}}
-                        </h2>
-                        <div class="flex flex-wrap items-center mb-6">
-                            <ul class="flex mb-4 mr-2 lg:mb-0">
-                                {% for i in 'iiiii' %}
-                                <li>
-                                    <a href="#">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="16"
-                                            height="16"
-                                            fill="currentColor"
-                                            class="w-4 mr-1 text-orange-500 "
-                                            viewBox="0 0 16 16">
-                                            <path
-                                                d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"></path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <p
-                            class="inline-block text-2xl text-text-700 ">
-                            <span>৳ {{product.price}}</span>
+            <div class="w-full px-2 md:w-1/2">
+                <div class="p-4 border rounded-md shadow-md lg:p-8 lg:ml-10 border-background-200 bg-background-50">
+                    <h2
+                        class="max-w-xl text-xl leading-none capitalize text-text-700 md:text-2xl">
+                        {{product.name}}
+                    </h2>
+                    <div class="flex flex-wrap items-center">
+                        <div class="flex items-center mt-1 mb-2">
+                            {% for i in '1234' %}
+                            <svg
+                                class="w-4 h-4 mr-1 text-yellow-300"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 22 20">
+                                <path
+                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            </svg>
+                            {% endfor %}
+                            <svg
+                                class="w-4 h-4 text-background-200"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor"
+                                viewBox="0 0 22 20">
+                                <path
+                                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                            </svg>
                             <span
-                                class="ml-3 text-base font-normal line-through text-text-500 "
-                                >৳20000</span
+                                class="bg-background-100 text-primary-800 font-semibold mr-2 px-2.5 py-0.5 rounded ml-3"
+                                >5.0</span
                             >
-                        </p>
+                        </div>
                     </div>
+                    <p class="inline-block text-2xl text-text-700">
+                        <span>৳ {{product.price}}</span>
+                        <span
+                            class="ml-3 text-base font-normal line-through text-text-500"
+                            >৳20000</span
+                        >
+                    </p>
                     <div
-                        class="py-6 mb-6 border-t border-b border-background-200">
+                        class="py-2 mb-6 border-y border-background-200">
                         {% if product.available %}
-                            <span class="text-base text-green-600">
-                                In Stock
-                            </span>
+                        <span class="text-base text-green-600"> In Stock </span>
                         {% else %}
-                            <span class="text-base text-red-500">
-                                Out of Stock
-                            </span>
+                        <span class="text-base text-red-500">
+                            Out of Stock
+                        </span>
                         {% endif %}
                     </div>
                     <div class="mb-6"></div>
-                    <div class="flex flex-wrap items-center justify-between mb-6">
-                        <div class="mb-4 mr-4 lg:mb-0">
-                            <div class="w-28">
-                                <div
-                                    class="relative flex w-full h-10 bg-transparent rounded-lg">
-                                    <button
-                                        class="w-20 h-full border-r rounded-l outline-none cursor-pointer bg-background-50 text-text-600 hover:text-text-700 hover:bg-background-300 border-background-100">
-                                        <span class="m-auto text-2xl font-thin"
-                                            >-</span
-                                        >
-                                    </button>
-                                    <input
-                                        type="number"
-                                        class="flex items-center w-full text-center outline-none bg-background-50 text-text-700 focus:outline-none text-md hover:text-text-800"
-                                        value="1" />
-                                    <button
-                                        class="w-20 h-full border-l rounded-r outline-none cursor-pointer bg-background-50 text-text-600 hover:text-text-700 hover:bg-background-300 border-background-100">
-                                        <span class="m-auto text-2xl font-thin"
-                                            >+</span
-                                        >
-                                    </button>
-                                </div>
+                    <div
+                        class="flex items-center justify-between mb-6">
+                        <div class="mr-4">
+                            <div
+                                class="flex items-center">
+                                <button
+                                    onClick="decreaseQuantity()"
+                                    class="cursor-pointer rounded-l bg-background-100 py-1 px-3.5 duration-100 hover:bg-primary-500 hover:text-text-50 h-10">
+                                    -
+                                </button>
+                                <input
+                                    id="item-quantity"
+                                    disabled
+                                    class="w-16 h-10 text-xs text-center border outline-none border-background-200 bg-background-50"
+                                    type="number"
+                                    value="1" />
+                                <button
+                                    onClick="increaseQuantity()"
+                                    class="h-10 px-3 py-1 duration-100 rounded-r cursor-pointer bg-background-100 hover:bg-primary-500 hover:text-text-50">
+                                    +
+                                </button>
                             </div>
                         </div>
-                        <a
+                        <button
                             href="#"
-                            class="w-full px-4 py-3 text-center capitalize border rounded-md border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-text-100 lg:w-1/2">
+                            class="w-full px-4 py-2 text-center capitalize border rounded-md border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-text-100 lg:w-1/2">
                             Add to cart
-                        </a>
+                        </button>
                     </div>
                     <div class="flex gap-4 mb-6">
                         <a
@@ -154,36 +120,50 @@
             </div>
         </div>
 
-        {% if related_products|length > 0 %}
-          {% include "shop/partials/section-banner.html" with text="Recommended for you" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
-          
-          <div class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
-            {% for product in related_products %}
-              {% include "shop/partials/product-card.html" %}
-            {% endfor %}
-          </div>
+        {% if related_products|length > 0 %} 
+            <div class="px-2">
+                {% include "shop/partials/section-banner.html" with text="Recommended for you" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+                <div
+                    class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
+                    {% for product in related_products %}
+                        {% include "shop/partials/product-card.html" %}
+                    {% endfor %}
+                </div>
+            </div>
         {% endif %}
     </div>
 </section>
+
+<style>
+    @layer utilities {
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+</style>
+
+<script>
+    function increaseQuantity() {
+        let input = document.querySelector("#item-quantity");
+        let currentValue = parseInt(input.value, 10);
+        if (isNaN(currentValue)) {
+            input.value = 1;
+        } else {
+            input.value = currentValue + 1;
+        }
+    }
+
+    function decreaseQuantity() {
+        let input = document.querySelector("#item-quantity");
+        let currentValue = parseInt(input.value, 10);
+        if (isNaN(currentValue) || currentValue <= 1) {
+            input.value = 1;
+        } else {
+            input.value = currentValue - 1;
+        }
+    }
+</script>
+
 {% endblock %}
-
-
-{% comment %} TODO: Delete this section {% endcomment %}
-{% comment %} {% extends "shop/layouts/base.html" %}
-{% block title %}{% endblock %}
-
-<!---->
-
-{% block content %}
-<p class="price">${{ product.price }}</p>
-<form
-    action="{% url 'add_to_cart' product.id %}"
-    method="post">
-    {{ cart_product_form }} {% csrf_token %}
-    <input
-        type="submit"
-        value="Add to cart" />
-</form>
-{{ product.description|linebreaks }} {% endblock %} {% endcomment %}
-
-<!--⚡-->

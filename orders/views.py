@@ -48,7 +48,7 @@ def create_order(request):
 
         
 
-    return render(request, 'order_page.html', {
+    return render(request, 'cart/partials/checkout_form.html', {
         'form': form,
         'cart_items': cart_items,
         'total_price': total_price
