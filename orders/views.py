@@ -31,19 +31,10 @@ def create_order(request):
                     quantity=item.quantity
                 )
 
-        cart_items.delete()
+        # cart_items.delete()
 
         request.session['order_id']=order.id
 
         # Additional logic to handle the order creation
         #return render(request, 'order_success.html', {'order': order})
-        return redirect(reverse('success_order'))
-
-    else:
-        form = OrderForm()
-
-    return render(request, 'cart/partials/checkout_form.html', {
-        'form': form,
-        'cart_items': cart_items,
-        'total_price': total_price
-    })
+        return redirect('payment_process')

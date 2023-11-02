@@ -4,6 +4,8 @@ module.exports = {
     content: [
         "./cart/templates/**/*.{html,js}",
         "./shop/templates/**/*.{html,js}",
+        "./orders/templates/**/*.{html,js}",
+        "./payment/templates/**/*.{html,js}",
         "./node_modules/flowbite/**/*.js",
     ],
     safelist: ["dark"],

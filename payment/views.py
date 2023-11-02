@@ -3,6 +3,8 @@ import stripe
 from ecommerce import settings
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from orders.models import Order
+from cart.models import CartItem
+
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -12,6 +14,9 @@ stripe.api_version = settings.STRIPE_API_VERSION
 def payment_process(request):
     order_id = request.session.get('order_id', None)
     order = get_object_or_404(Order, id=order_id)
+
+    session_id = request.session.session_key
+    cart_items = CartItem.objects.filter(session_id=session_id)
 
     if request.method == 'POST':
         success_url = request.build_absolute_uri(reverse('completed'))
@@ -38,9 +43,11 @@ def payment_process(request):
             })
 
         total_price = 0
-
         
         session = stripe.checkout.Session.create(**session_data)
+
+        cart_items.delete()
+        
         return redirect(session.url, code=303)
 
     else:
