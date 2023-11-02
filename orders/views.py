@@ -35,18 +35,12 @@ def create_order(request):
 
         request.session['order_id']=order.id
 
-        
-
-            # Additional logic to handle the order creation
-        return redirect(reverse('process'))
-
-            # Additional logic to handle the order creation
+        # Additional logic to handle the order creation
         #return render(request, 'order_success.html', {'order': order})
+        return redirect(reverse('success_order'))
 
     else:
         form = OrderForm()
-
-        
 
     return render(request, 'cart/partials/checkout_form.html', {
         'form': form,

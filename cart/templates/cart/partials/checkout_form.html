@@ -3,7 +3,7 @@
     id="checkoutModal"
     tabindex="-1"
     aria-hidden="true"
-    class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full overflow-x-hidden overflow-y-auto backdrop-blur-sm md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full max-w-2xl p-4 md:h-auto">
         <!-- Modal content -->
         <div class="relative p-4 rounded-lg shadow bg-background-50 sm:p-5">
@@ -30,7 +30,8 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form action="#">
+            <form action="{% url "create_order" %}" method="POST">
+                {% csrf_token %}
                 <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <div class="md:col-span-2">
                         <label
