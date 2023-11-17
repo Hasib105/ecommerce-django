@@ -3,11 +3,12 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 
+
 def index(request):
     categories = Category.objects.all()
     featured_products = Product.objects.filter(featured=True)[:10]
     latest_products = Product.objects.order_by("-created")[:12]
-    
+
     return render(
         request,
         "shop/index.html",
@@ -44,6 +45,18 @@ def category_details(request, category_id):
     )
 
 
-#TODO: Delete Redundant code for testing new templates
+def categories(request):
+    categories = Category.objects.all()
+
+    return render(
+        request,
+        "shop/categories.html",
+        {
+            "categories": categories,
+        },
+    )
+
+
+# TODO: Delete Redundant code for testing new templates
 def test_template(request):
-    return render(request, "shop/product_details.html")
+    return render(request, "shop/categories.html")

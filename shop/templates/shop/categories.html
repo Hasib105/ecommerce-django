@@ -1,0 +1,32 @@
+{% extends 'shop/layouts/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Categories
+{% endblock %} 
+
+{% block content %}
+  <div class="p-2 md:px-24">
+      {% if categories|length > 0 %}
+        {% include "shop/partials/section-banner.html" with text="All Categories" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+
+        <div class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
+          {% for category in categories %}
+            {% include "shop/partials/category-card.html" %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="flex flex-col items-center justify-center">
+            <img
+                src="{% static 'images/empty-box.webp' %}"
+                alt="No Categories Found" />
+
+            <h1 class="text-5xl font-bold capitalize text-primary-600">
+                No Categories Found
+            </h1>
+        </div>
+
+      {% endif %} 
+  </div>
+{% endblock %}

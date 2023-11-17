@@ -5,7 +5,7 @@
 {% endblock %} 
 
 {% block content %}
-  <div class="p-2 md:px-24 md:py-8">
+  <div class="p-2 md:px-24">
       {% if categories|length > 0 %}
         {% include "shop/partials/categories-carousel.html" %}
       {% endif %} 
@@ -15,7 +15,8 @@
       </div>
         <!--Featured Products--> 
       {% if featured_products|length > 0 %}
-        {% include "shop/partials/section-banner.html" with text="Featured Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+        <div class="pt-6">
+          {% include "shop/partials/section-banner.html" with text="Featured Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}</div>
         
         <div class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
           {% for product in featured_products %}
@@ -26,7 +27,8 @@
 
          <!--Latest Products--> 
       {% if featured_products|length > 0 %}
-        {% include "shop/partials/section-banner.html" with text="Latest Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}
+        <div class="pt-6">
+          {% include "shop/partials/section-banner.html" with text="Latest Products" image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/19081585776035.5d85dd203e3d0.png"%}</div>
         
         <div class="grid grid-cols-2 gap-3 mt-6 lg:gap-6 md:grid-cols-4 lg:grid-cols-6">
           {% for product in latest_products %}

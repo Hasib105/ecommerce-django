@@ -1269,10 +1269,6 @@ html {
   margin: 0.5rem;
 }
 
-.m-4{
-  margin: 1rem;
-}
-
 .mx-2{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1288,14 +1284,19 @@ html {
   margin-right: auto;
 }
 
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .my-6{
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.my-4{
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .-mr-1{
@@ -1582,10 +1583,6 @@ html {
   flex-shrink: 0;
 }
 
-.grow{
-  flex-grow: 1;
-}
-
 .-translate-x-1\/2{
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1682,10 +1679,6 @@ html {
   flex-wrap: wrap;
 }
 
-.place-content-start{
-  place-content: start;
-}
-
 .items-start{
   align-items: flex-start;
 }
@@ -1756,10 +1749,6 @@ html {
 
 .divide-background-200 > :not([hidden]) ~ :not([hidden]){
   border-color: var(--background-200);
-}
-
-.place-self-start{
-  place-self: start;
 }
 
 .self-center{
@@ -1903,10 +1892,6 @@ html {
   border-color: transparent;
 }
 
-.border-background-50{
-  border-color: var(--background-50);
-}
-
 .bg-background-100{
   background-color: var(--background-100);
 }
@@ -1969,11 +1954,6 @@ html {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-blue-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 131 248 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-50{
   --tw-bg-opacity: 0.5;
 }
@@ -2015,16 +1995,8 @@ html {
   padding: 1rem;
 }
 
-.p-5{
-  padding: 1.25rem;
-}
-
 .p-6{
   padding: 1.5rem;
-}
-
-.p-8{
-  padding: 2rem;
 }
 
 .px-1{
@@ -2139,6 +2111,10 @@ html {
 
 .pt-2{
   padding-top: 0.5rem;
+}
+
+.pt-6{
+  padding-top: 1.5rem;
 }
 
 .text-left{
@@ -2510,11 +2486,6 @@ html {
 .hover\:bg-white:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-blue-600:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
 
 .hover\:text-blue-600:hover{

@@ -18,41 +18,35 @@ def payment_process(request):
     session_id = request.session.session_key
     cart_items = CartItem.objects.filter(session_id=session_id)
 
-    if request.method == 'POST':
-        success_url = request.build_absolute_uri(reverse('completed'))
-        cancel_url = request.build_absolute_uri(reverse('canceled'))
+    success_url = request.build_absolute_uri(reverse('completed'))
+    cancel_url = request.build_absolute_uri(reverse('canceled'))
 
-        session_data = {
-            'mode': 'payment',
-            'client_reference_id': order.id,
-            'success_url': success_url,
-            'cancel_url': cancel_url,
-            'line_items': [],
-        }
+    session_data = {
+        'mode': 'payment',
+        'client_reference_id': order.id,
+        'success_url': success_url,
+        'cancel_url': cancel_url,
+        'line_items': [],
+    }
 
-        for item in order.items.all():
-            session_data['line_items'].append({
-                'price_data': {
-                    'unit_amount': int(item.price * Decimal('100')),
-                    'currency': 'usd',
-                    'product_data': {
-                        'name': item.product.name,
-                    },
+    for item in order.items.all():
+        session_data['line_items'].append({
+            'price_data': {
+                'unit_amount': int(item.price * Decimal('100')),
+                'currency': 'usd',
+                'product_data': {
+                    'name': item.product.name,
                 },
-                'quantity': item.quantity,
-            })
+            },
+            'quantity': item.quantity,
+        })
 
-        total_price = 0
-        
-        session = stripe.checkout.Session.create(**session_data)
-
-        cart_items.delete()
-        
-        return redirect(session.url, code=303)
-
-    else:
-        return render(request, 'process.html', locals())
-
+    total_price = 0
+    
+    session = stripe.checkout.Session.create(**session_data)
+    
+    cart_items.delete()
+    return redirect(session.url, code=303)
 
 def payment_completed(request):
     order_id = request.session.get('order_id', None)
