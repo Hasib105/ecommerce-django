@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.text import slugify
 # Create your models here.
 
 
@@ -20,6 +20,18 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        # Generate unique slug based on the name field
+        self.slug = slugify(self.name)
+
+        # Check if the generated slug is unique, if not, append a counter
+        counter = 1
+        while Category.objects.filter(slug=self.slug).exists():
+            self.slug = f"{slugify(self.name)}-{counter}"
+            counter += 1
+
+        super().save(*args, **kwargs)
 
 
 class Brand(models.Model):
