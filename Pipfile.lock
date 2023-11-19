@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "419d9a1d2ed59b7ca927122262b9dbe08949d94e9642778c2333ac8f1e89dd81"
+            "sha256": "38d0e84e8e83e503afecab4e36ee2ff8019d79449795222ed94bc5774069a545"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082",
-                "sha256:92d6037539857d8206b8f6ae472e8b77db8058fec5937a1ef3f54304089edbb9"
+                "sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1",
+                "sha256:e036ab49d5b79556f99cfc2d9320b34cfbe5be05c5871b51de9329f0603b0474"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==2023.7.22"
+            "version": "==2023.11.17"
         },
         "charset-normalizer": {
             "hashes": [
@@ -134,7 +134,17 @@
                 "sha256:e1d37c51ad26186de355cbcec16613ebdabfa9689bbade9c538835205a8abbe9"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.2.7"
+        },
+        "django-browser-reload": {
+            "hashes": [
+                "sha256:08b457f1b6599bf782d4d2ecdfb0897d6fc936ac4035060d0269c2af5ef4ef7a",
+                "sha256:875b6bd01db13380522ccb4ae75871a2edeae74bb5ac92bf32eb76763d575d86"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.8'",
+            "version": "==1.12.1"
         },
         "idna": {
             "hashes": [
@@ -202,6 +212,7 @@
                 "sha256:fe1e26e1ffc38be097f0ba1d0d07fcade2bcfd1d023cda5b29935ae8052bd793"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==10.1.0"
         },
         "requests": {
@@ -222,11 +233,12 @@
         },
         "stripe": {
             "hashes": [
-                "sha256:2ac98a5ce45d102b8c95cf57259fb182a99043e7a5dae5559220102d34bcba5c",
-                "sha256:45edff0627217de5348cb4fcf397fff6d722c88cacc0ff7bc9d47b85139138bf"
+                "sha256:76e0df7071da5ef39134d929b8c7facf1319aa47c222bf1272b48ac55abf3d6f",
+                "sha256:e54160e8eaa8d3947bd9178e7a7ded07f34263a301834baa1e43a8aee9a0facf"
             ],
             "index": "pypi",
-            "version": "==7.2.0"
+            "markers": "python_version >= '3.6'",
+            "version": "==7.5.0"
         },
         "typing-extensions": {
             "hashes": [
@@ -246,11 +258,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84",
-                "sha256:fdb6d215c776278489906c2f8916e6e7d4f5a9b602ccbcfdf7f016fc8da0596e"
+                "sha256:55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3",
+                "sha256:df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
             ],
-            "markers": "python_version >= '3.7'",
-            "version": "==2.0.7"
+            "markers": "python_version >= '3.8'",
+            "version": "==2.1.0"
         }
     },
     "develop": {
@@ -268,15 +280,17 @@
                 "sha256:e1d37c51ad26186de355cbcec16613ebdabfa9689bbade9c538835205a8abbe9"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.2.7"
         },
         "django-browser-reload": {
             "hashes": [
-                "sha256:2dc98c752b55d22db9c11fbc0274c16160ce4dcd67ef0ef294135ab57d711435",
-                "sha256:6c10b4b59a5aa7a412284d7c909fb5b80199e98a488f5b24da5c49b090d1ef3f"
+                "sha256:08b457f1b6599bf782d4d2ecdfb0897d6fc936ac4035060d0269c2af5ef4ef7a",
+                "sha256:875b6bd01db13380522ccb4ae75871a2edeae74bb5ac92bf32eb76763d575d86"
             ],
             "index": "pypi",
-            "version": "==1.12.0"
+            "markers": "python_version >= '3.8'",
+            "version": "==1.12.1"
         },
         "sqlparse": {
             "hashes": [

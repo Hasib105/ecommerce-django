@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "cart",
     'orders',
     'payment',
+    'administration',
     "django_browser_reload",  # !<- Dev dependency
 ]
 

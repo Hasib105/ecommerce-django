@@ -7,6 +7,7 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('orders/', include('orders.urls')),
     path('payment/', include('payment.urls')),
+    path("", include('administration.urls')),
     path("", include("shop.urls")),
     path("__reload__/", include("django_browser_reload.urls")),  # !<- Dev dependency
 ]

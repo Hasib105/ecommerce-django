@@ -1,7 +1,18 @@
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from .models import Category, Product
 from cart.forms import CartAddProductForm
+
+
+def search_items(request):
+    query = request.GET.get('query', '')
+    items = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
+
+    return render(request, 'item/items.html', {
+        'items': items,
+        'query': query,
+    })
 
 
 def index(request):
