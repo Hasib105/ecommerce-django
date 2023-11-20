@@ -7,47 +7,47 @@
 </head>
 <body>
   <div class="flex">
-    <div class="bg-gray-800 w-64 h-screen">
+    <div class="w-64 h-screen bg-gray-800">
       <ul class="py-4">
 
         <li class="p-4 hover:bg-gray-700">
-          <a href="/" class="text-white font-semibold">Home</a>
+          <a href="/" class="font-semibold text-white">Home</a>
         </li>
 
         <li class="p-4 hover:bg-gray-700">
-          <a href="{% url 'dashboard' %}" class="text-white font-semibold">Dashboard</a>
+          <a href="{% url 'dashboard' %}" class="font-semibold text-white">Dashboard</a>
         </li>
         <li class="p-4 hover:bg-gray-700">
-          <a href="{% url 'order-list' %}" class="text-white font-semibold">Orders</a>
+          <a href="{% url 'order-list' %}" class="font-semibold text-white">Orders</a>
         </li>
         
 
         <li class="mb-2 ">
           <div x-data="{ open: false }">
-            <button @click="open = !open" class="flex justify-between w-full items-center text-white hover:bg-gray-600 px-4 py-2 rounded">
+            <button @click="open = !open" class="flex items-center justify-between w-full px-4 py-2 text-white rounded hover:bg-gray-600">
               <span class="font-semibold">Products</span>
               
 
             </button>
             <!-- Dropdown Items -->
             <div x-show="open" @click.away="open = false" class="mt-2">
-              <a href="{% url 'create-product' %}" class="block text-white hover:bg-gray-600 px-4 py-2">create product</a>
-              <a href="{% url 'product-list' %}" class="block text-white hover:bg-gray-600 px-4 py-2">product list </a>
+              <a href="{% url 'create-product' %}" class="block px-4 py-2 text-white hover:bg-gray-600">create product</a>
+              <a href="{% url 'product-list' %}" class="block px-4 py-2 text-white hover:bg-gray-600">product list </a>
               
             </div>
           </div>
         </li>
         <li class="mb-2 ">
           <div x-data="{ open: false }">
-            <button @click="open = !open" class="flex justify-between w-full items-center text-white hover:bg-gray-600 px-4 py-2 rounded">
+            <button @click="open = !open" class="flex items-center justify-between w-full px-4 py-2 text-white rounded hover:bg-gray-600">
               <span class="font-semibold">Category</span>
               
 
             </button>
             <!-- Dropdown Items -->
             <div x-show="open" @click.away="open = false" class="mt-2">
-              <a href="{% url 'create-category' %}" class="block text-white hover:bg-gray-600 px-4 py-2">create category</a>
-              <a href="{% url 'category-list' %}" class="block text-white hover:bg-gray-600 px-4 py-2">category list </a>
+              <a href="{% url 'create-category' %}" class="block px-4 py-2 text-white hover:bg-gray-600">create category</a>
+              <a href="{% url 'category-list' %}" class="block px-4 py-2 text-white hover:bg-gray-600">category list </a>
               
             </div>
           </div>

@@ -12,4 +12,8 @@ urlpatterns = [
     path('update_category/<int:pk>/', views.category_update, name='update-category' ),
     path('delete_product/<int:pk>/', views.product_delete, name='delete-product' ),
     path('delete_category/<int:pk>/', views.category_delete, name='delete-category' ),
+
+    #TODO: Delete temporary urls
+    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
 ]

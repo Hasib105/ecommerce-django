@@ -75,8 +75,3 @@ def categories(request):
             "categories": categories,
         },
     )
-
-
-# TODO: Delete Redundant code for testing new templates
-def test_template(request):
-    return render(request, "shop/categories.html")

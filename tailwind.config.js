@@ -6,6 +6,7 @@ module.exports = {
         "./shop/templates/**/*.{html,js}",
         "./orders/templates/**/*.{html,js}",
         "./payment/templates/**/*.{html,js}",
+        "./administration/templates/**/*.{html,js}",
         "./node_modules/flowbite/**/*.js",
     ],
     safelist: ["dark"],
