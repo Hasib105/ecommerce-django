@@ -1,5 +1,7 @@
+from re import template
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_view
 
 urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard' ),
@@ -14,6 +16,7 @@ urlpatterns = [
     path('delete_category/<int:pk>/', views.category_delete, name='delete-category' ),
 
     #TODO: Delete temporary urls
-    path('login/', views.login, name='login'),
+    path('login/', auth_view.LoginView.as_view(template_name='auth/login.html'), name='login'),
+    path('logout/', auth_view.LogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register'),
 ]

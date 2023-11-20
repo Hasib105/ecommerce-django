@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'orders',
     'payment',
     'administration',
+    'widget_tweaks',
     "django_browser_reload",  # !<- Dev dependency
 ]
 
@@ -72,6 +73,7 @@ TEMPLATES = [
                 "cart.context_processors.cart_items_count",
             ],
         },
+        
     },
 ]
 
@@ -141,6 +143,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CART_SESSION_ID = 'cart'
 
+LOGIN_REDIRECT_URL = 'dashboard'
 
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51NXypmI4aysZx8DWvx6sWkSYs9CEsMK6wYeFIGowv1SvjUmipKe6Q6ZZsRovaxIFX8uwJJnR2AIZkAUeP7gpiXRv003e9eDeXn'
 STRIPE_SECRET_KEY = 'sk_test_51NXypmI4aysZx8DWSuzDMMB0TdzcML5sN5PYswhYUYNQdnllC5q7B0y3ngL61Wnqefb0K0xOVnHwNFz6QeFZ6oGD008PqvmdX0'
