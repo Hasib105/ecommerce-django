@@ -8,7 +8,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
-    category_image = models.ImageField(upload_to='category_image', blank=True)
+    category_image = models.ImageField(upload_to='category_image', blank=True, null=True)
 
     class Meta:
         ordering = ['name']
@@ -36,6 +36,7 @@ class Category(models.Model):
 
 class Brand(models.Model):
     name = models.CharField(max_length=255)
+    brand_image = models.ImageField(upload_to='brand_image', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -46,7 +47,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category,related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200,unique=True)
-    product_image = models.ImageField(upload_to='product_image', blank=True)
+    product_image = models.ImageField(upload_to='product_image', blank=True,null=True)
     description = models.TextField(blank=True)
     summary = models.CharField(max_length=300)
     price = models.DecimalField(max_digits=10, decimal_places=2)
