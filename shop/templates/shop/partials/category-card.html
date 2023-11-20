@@ -1,7 +1,7 @@
 <div
     class="w-full max-w-sm overflow-hidden border rounded-lg shadow border-background-200 bg-background-50 group">
     <a
-        href="/category_details/{{category.pk}}/"
+        href="{% url "category_details" category.slug %}"
         class="block w-full h-40 overflow-hidden">
         <img
             class="object-cover w-full h-full transition duration-500 ease-in-out rounded-t-lg group-hover:scale-105"

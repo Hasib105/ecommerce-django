@@ -2927,6 +2927,10 @@ html {
     font-size: 1rem;
   }
 
+  .md\:text-5xl{
+    font-size: 3.053rem;
+  }
+
   .md\:before\:w-0::before{
     content: var(--tw-content);
     width: 0px;

@@ -46,8 +46,8 @@ def product_details(request, pk):
     )
 
 
-def category_details(request, category_id):
-    category = get_object_or_404(Category, id=category_id)
+def category_details(request, slug):
+    category = get_object_or_404(Category, slug=slug)
     products = category.products.all()
     return render(
         request,
