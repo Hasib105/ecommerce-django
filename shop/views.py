@@ -6,13 +6,22 @@ from cart.forms import CartAddProductForm
 
 
 def search_items(request):
-    query = request.GET.get('query', '')
-    items = Product.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
+    query = request.GET.get("query", "")
+    products = Product.objects.filter(
+        Q(name__icontains=query) | Q(description__icontains=query)
+    )
 
-    return render(request, 'item/items.html', {
-        'items': items,
-        'query': query,
-    })
+    featured_products = Product.objects.filter(featured=True)[:10]
+
+    return render(
+        request,
+        "shop/search_results.html",
+        {
+            "products": products,
+            "featured_products": featured_products,
+            "query": query,
+        },
+    )
 
 
 def index(request):

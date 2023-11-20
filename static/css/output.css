@@ -2931,6 +2931,10 @@ html {
     font-size: 3.053rem;
   }
 
+  .md\:text-xl{
+    font-size: 1.250rem;
+  }
+
   .md\:before\:w-0::before{
     content: var(--tw-content);
     width: 0px;

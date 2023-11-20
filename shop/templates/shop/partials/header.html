@@ -225,12 +225,15 @@
                                 d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                         </svg>
                     </div>
-
-                    <input
-                        type="text"
-                        id="search-navbar"
-                        class="block w-full p-2 pl-10 text-sm border rounded-lg text-text-900 border-background-300 bg-background-100 focus:outline-background-400"
-                        placeholder="What are you looking for?" />
+                    
+                    <form action="{% url "search_item" %}" method="GET">
+                        <input
+                            type="text"
+                            name="query"
+                            id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm border rounded-lg text-text-900 border-background-300 bg-background-100 focus:outline-background-400"
+                            placeholder="What are you looking for?" />
+                    </form>
                 </li>
 
                 <ul class="block w-full pt-2 text-right divide-y divide-background-200 md:hidden">
