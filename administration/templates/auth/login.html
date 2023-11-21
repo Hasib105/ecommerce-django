@@ -1,39 +1,53 @@
-{% extends 'auth/base.html' %}
+{% extends 'auth/base.html' %} 
+{% load static %} 
+{% block title %} Login {%endblock %} 
+{% load widget_tweaks %} 
 
-{% load static %}
-
-
-{% block title %}Login{% endblock %}
-{% load widget_tweaks %}
 {% block content %}
-<div class="w-full border rounded-lg shadow border-background-200 bg-background-50 md:mt-0 sm:max-w-md xl:p-0">
-  <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-    <h1 class="text-xl font-bold leading-tight tracking-tight text-text-900 md:text-2xl">
-      Sign in to continue
-    </h1>
-    <form method="post">
-        {% csrf_token %}
-       <div class="form-field">
-      <label for="username" class="form-label">Username</label>
-      {{ form.username|add_class:"bg-background-100 border border-background-300 text-text-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" }}
+<div
+    class="w-full border rounded-lg shadow border-background-200 bg-background-50 md:mt-0 sm:max-w-md xl:p-0">
+    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <h1
+            class="text-xl font-bold leading-tight tracking-tight text-text-900 md:text-2xl">
+            Sign in to continue
+        </h1>
+        <form method="post" class="space-y-4 md:space-y-6">
+            {% csrf_token %}
+            <div class="form-field">
+                <label
+                    for="username"
+                    class="form-label block mb-2 text-sm font-medium text-text-900"
+                    >Username</label
+                >
+
+                {{ form.username|add_class:"bg-background-100 border border-background-300 text-text-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" }}
+                
+            </div>
+            <div class="form-field">
+                <label
+                    for="password"
+                    class="form-label block mb-2 text-sm font-medium text-text-900"
+                    >Password</label
+                >
+
+                {{ form.password|add_class:"bg-background-100 border border-background-300 text-text-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" }}
+            
+              </div>
+            <button
+                type="submit"
+                class="w-full text-text-50 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Sign in
+            </button>
+        </form>
+
+        <p class="text-sm font-light text-text-500">
+            Don’t have an account yet?
+            <a
+                href="{% url 'register' %}"
+                class="font-medium text-primary-600 hover:underline"
+                >Sign up</a
+            >
+        </p>
     </div>
-    <div class="form-field">
-      <label for="password" class="form-label">Password</label>
-      {{ form.password|add_class:"bg-background-100 border border-background-300 text-text-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" }}
-    </div>
-     <button
-        type="submit"
-        class="w-full text-text-50 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-      >
-        Sign in
-      </button>
-    </form>
-   
-    <p class="text-sm font-light text-text-500">
-        Don’t have an account yet?
-        <a href="{% url 'register' %}" class="font-medium text-primary-600 hover:underline">Sign up</a>
-    </p>
-    
-  </div>
 </div>
 {% endblock %}
