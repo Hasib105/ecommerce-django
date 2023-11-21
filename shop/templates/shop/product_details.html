@@ -10,7 +10,7 @@
                 <div class="m-2 overflow-hidden">
                     <img
                         class="object-cover w-full h-64 rounded-md md:h-96"
-                        src="{{product.product_image}}"
+                        src="{{product.product_image.url}}"
                         alt="{{product.name}}" />
                 </div>
                 <div class="items-center justify-center hidden mx-2 border-y md:flex border-background-200">
@@ -21,7 +21,7 @@
                             href="#">
                             <img
                                 class="object-cover w-full border rounded-md border-background-200 hover:border-2 hover:border-primary-300 aspect-square"
-                                src="{{product.product_image}}"
+                                src="{{product.product_image.url}}"
                                 alt="{{product.name}}" />
                         </a>
                     </div>

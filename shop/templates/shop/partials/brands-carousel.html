@@ -5,14 +5,14 @@
     <div class="relative">
         <div
             class="brands-container flex snap-x snap-mandatory overflow-hidden overflow-x-auto space-x-3 rounded scroll-smooth before:w-[45vw] before:shrink-0 after:w-[45vw] after:shrink-0 md:before:w-0 md:after:w-0">
-            {% for category in categories %}
+            {% for brand in brands %}
             <div class="flex flex-shrink-0 snap-start">
                 <a
-                    href="{% url 'category_details' category.slug %}"
+                    href="{% url 'brand_details' brand.id %}"
                     class="block h-40 overflow-hidden rounded-md shadow-md group brand w-60">
                     <img
-                        alt="{{category.name}}"
-                        src="{{category.category_image}}"
+                        alt="{{brand.name}}"
+                        src="{{brand.brand_image.url}}"
                         class="object-cover w-full h-full transition duration-500 ease-in- hover:scale-110" />
                 </a>
             </div>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from .models import Category, Product
+from .models import Brand, Category, Product
 from cart.forms import CartAddProductForm
 
 
@@ -26,6 +26,7 @@ def search_items(request):
 
 def index(request):
     categories = Category.objects.all()
+    brands = Brand.objects.all()
     featured_products = Product.objects.filter(featured=True)[:10]
     latest_products = Product.objects.order_by("-created")[:12]
 
@@ -34,6 +35,7 @@ def index(request):
         "shop/index.html",
         {
             "categories": categories,
+            "brands": brands,
             "featured_products": featured_products,
             "latest_products": latest_products,
         },
@@ -74,4 +76,26 @@ def categories(request):
         {
             "categories": categories,
         },
+    )
+
+
+def brands(request):
+    brands = Brand.objects.all()
+
+    return render(
+        request,
+        "shop/brands.html",
+        {
+            "brands": brands,
+        },
+    )
+
+
+def brand_details(request, id):
+    brand = get_object_or_404(Brand, id=id)
+    products = brand.products.all()
+    return render(
+        request,
+        "shop/brand_details.html",
+        {"brand": brand, "products": products},
     )
