@@ -6,7 +6,7 @@
         class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
         <!--Left Section-->
         <a
-            href="/"
+            href="{% url 'index' %}"
             class="flex items-center">
             <!--Branding-->
             <img
@@ -49,7 +49,7 @@
                         aria-labelledby="dropdownLargeButton">
                         <li>
                             <a
-                                href="{% url "categories" %}"
+                                href="{% url 'categories' %}"
                                 class="block px-4 py-2 hover:bg-background-100"
                                 >Categories</a
                             >
@@ -226,7 +226,7 @@
                         </svg>
                     </div>
                     
-                    <form action="{% url "search_item" %}" method="GET">
+                    <form action="{% url 'search_item' %}" method="GET">
                         <input
                             type="text"
                             name="query"
@@ -239,7 +239,7 @@
                 <ul class="block w-full pt-2 text-right divide-y divide-background-200 md:hidden">
                     <li>
                         <a
-                            href="{% url "categories" %}"
+                            href="{% url 'categories' %}"
                             class="block py-2 font-bold hover:text-text-500"
                             >Categories</a
                         >
