@@ -9,7 +9,7 @@
             class="justify-between block p-6 mb-6 rounded-md shadow-md group bg-background-50 sm:flex sm:justify-start">
             <img
                 src="{% if product.product_image %}
-                        {{ product.product_image }} 
+                        {{ product.product_image.url }} 
                     {% else %}
                         {% static 'images/broken-image.webp' %}
                     {% endif %}"
