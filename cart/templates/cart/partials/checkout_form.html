@@ -30,7 +30,7 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <form action="{% url "create_order" %}" method="POST">
+            <form action="{% url 'create_order' %}" method="POST">
                 {% csrf_token %}
                 <div class="grid gap-4 mb-4 sm:grid-cols-2">
                     <div class="md:col-span-2">
