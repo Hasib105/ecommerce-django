@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required
+@login_required(login_url='/login/')
 def dashboard(request):
     product = Product.objects.count()
     order_items = OrderItem.objects.filter(order__status="complete")
@@ -21,7 +21,7 @@ def dashboard(request):
     )
 
 
-@login_required
+@login_required(login_url='/login/')
 def order_list(request):
     orders = Order.objects.order_by("-id")
     total = Order.objects.count()
@@ -41,21 +41,21 @@ def order_list(request):
     )
 
 
-@login_required
+@login_required(login_url='/login/')
 def product_list(requset):
     products = Product.objects.order_by("-id")
 
     return render(requset, "product/product_list.html", {"products": products})
 
 
-@login_required
+@login_required(login_url='/login/')
 def category_list(requset):
     categories = Category.objects.order_by("-id")
 
     return render(requset, "category/category_list.html", {"categories": categories})
 
 
-@login_required
+@login_required(login_url='/login/')
 def product_create(request):
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
@@ -67,7 +67,7 @@ def product_create(request):
     return render(request, "product/create.html", {"form": form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def category_create(request):
     if request.method == "POST":
         form = CategoryForm(request.POST, request.FILES)
@@ -79,7 +79,7 @@ def category_create(request):
     return render(request, "category/create.html", {"form": form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def product_update(request, pk):
     product = Product.objects.get(pk=pk)
     if request.method == "POST":
@@ -92,14 +92,14 @@ def product_update(request, pk):
     return render(request, "product/update.html", {"form": form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def product_delete(request, pk):
     product = Product.objects.get(pk=pk)
     product.delete()
     return redirect("product-list")
 
 
-@login_required
+@login_required(login_url='/login/')
 def category_update(request, pk):
     category = Category.objects.get(pk=pk)
     if request.method == "POST":
@@ -112,15 +112,12 @@ def category_update(request, pk):
     return render(request, "category/update.html", {"form": form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def category_delete(request, pk):
     category = Category.objects.get(pk=pk)
     category.delete()
     return redirect("category-list")
 
-# TODO: Delete temporary views
-def login(request):
-    return render(request, "auth/login.html")
 
-def register(request):
-    return render(request, "auth/register.html")
+
+
