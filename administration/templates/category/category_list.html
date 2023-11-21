@@ -21,7 +21,7 @@
           <td class="py-2 px-4 border-b mb-2 text-left">{{category.name}}</td>
           <td class="py-2 px-4 border-b mb-2 text-left">
            {% if category.image %}
-      <img src="{{ category.image.url }}" alt="Product" class="w-16 h-16 object-cover">
+      <img src="{{ category.category_image.url }}" alt="Product" class="w-16 h-16 object-cover">
     {% else %}
       No image available
     {% endif %}
