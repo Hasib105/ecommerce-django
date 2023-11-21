@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from shop.models import Product, Category
+from shop.models import Product, Category , Brand
 from orders.models import Order, OrderItem
-from .forms import ProductForm, CategoryForm
+from .forms import ProductForm, CategoryForm , BrandForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -54,6 +54,11 @@ def category_list(requset):
 
     return render(requset, "category/category_list.html", {"categories": categories})
 
+@login_required(login_url='/login/')
+def brand_list(requset):
+    brands = Brand.objects.order_by("-id")
+
+    return render(requset, "brand/brand_list.html", {"brands": brands})
 
 @login_required(login_url='/login/')
 def product_create(request):
@@ -77,6 +82,17 @@ def category_create(request):
     else:
         form = CategoryForm()
     return render(request, "category/create.html", {"form": form})
+
+@login_required(login_url='/login/')
+def brand_create(request):
+    if request.method == "POST":
+        form = BrandForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("brand-list")
+    else:
+        form = BrandForm()
+    return render(request, "brand/create.html", {"form": form})
 
 
 @login_required(login_url='/login/')
@@ -121,3 +137,21 @@ def category_delete(request, pk):
 
 
 
+@login_required(login_url='/login/')
+def brand_update(request, pk):
+    brand = Brand.objects.get(pk=pk)
+    if request.method == "POST":
+        form = CategoryForm(request.POST, request.FILES, instance=brand)
+        if form.is_valid():
+            form.save()
+            return redirect("brand-list")
+    else:
+        form = CategoryForm(instance=brand)
+    return render(request, "brand/update.html", {"form": form})
+
+
+@login_required(login_url='/login/')
+def brand_delete(request, pk):
+    brand = Brand.objects.get(pk=pk)
+    brand.delete()
+    return redirect("brand-list")

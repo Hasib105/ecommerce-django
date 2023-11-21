@@ -55,7 +55,7 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     featured = models.BooleanField(default=False)
-    brand= models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brand', null=True, blank=True)
+    brand= models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='products', null=True, blank=True)
 
 
     
